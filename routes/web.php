@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//PSI
+
 Route::get('/toni', function () {
     return view('welcome');
 });
@@ -46,4 +48,12 @@ Route::get('/nomes/{nome}/{n}', function($nome, $n){
 
 Route::get('/bien-venido', function () {
     return view('bem-vindo');
+});
+
+
+
+//Redes
+
+Route::get('/ola-mundo', function () {
+    return view('ola_mundo');
 });
