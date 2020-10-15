@@ -43,3 +43,7 @@ Route::get('/nomes/{nome}/{n}', function($nome, $n){
 	};
 	return;
 });
+
+Route::get('/bien-venido', function () {
+    return view('bem-vindo');
+});
