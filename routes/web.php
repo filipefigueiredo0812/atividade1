@@ -38,7 +38,7 @@ Route::get('/nome/{nome}/{apelido}', function($nome, $apelido){
 	echo('<h1>Olá '.$nome.' '.$apelido.'</h1>');
 });
 
-Route::get('/nomes/{nome}/{n}', function($nome, $n){
+Route::get('/nome/{nome}/{n}', function($nome, $n){
 	$numero=is_numeric($n)? $n:5;
 	for ($i=0; $i < $numero; $i++) { 
 		echo('<h1>Olá '.$nome.'</h1>');
@@ -51,9 +51,37 @@ Route::get('/bien-venido', function () {
 });
 
 
-
-//Redes
-
-Route::get('/ola-mundo', function () {
-    return view('ola_mundo');
+Route::get('/nomes/{name}/{surname}', function ($nombre=null, $apellido=null){
+    return view('mostranome',[
+        'nome' => $nombre,
+        'apelido' => $apellido
+    ]);
 });
+
+//Route::get('/nomes/{name}/{surname}/{numero}', function ($nombre=null, $apellido=null, $numero){
+//    return view('mostranumero',[
+//        'nome' => $nombre,
+//        'apelido' => $apellido
+//        'numero' => $numero
+//    ]);
+//});
+
+Route::get('/tarefas', function (){
+    $tarefas = [
+        'Compras senha',
+        'Imprimir fotocópias',
+        'Carregar cartão'
+    ];
+    return view('tarefas',[
+        'tarefas' => $tarefas,
+    ]);
+});
+
+
+
+Route::get('/entrada', 'App\Http\Controllers\PortalController@index');
+
+
+
+
+Route::get('/equipas', 'App\Http\Controllers\PortalController@listarEquipas');
