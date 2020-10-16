@@ -84,4 +84,8 @@ Route::get('/entrada', 'App\Http\Controllers\PortalController@index');
 
 
 
-Route::get('/equipas', 'App\Http\Controllers\PortalController@listarEquipas');
+Route::get('/listar-equipas', 'App\Http\Controllers\PortalController@listarEquipas');
+
+
+
+Route::get('/listar-equipas/{chave}', 'App\Http\Controllers\PortalController@listarEquipa');
