@@ -20,7 +20,7 @@ Route::get('/toni', function () {
 });
 
 Route::get('/bem-vindo', function () {
-    echo('olá mundo');
+    return view ('bem-vindo');
 });
 
 Route::get('/', function(){
@@ -66,7 +66,7 @@ Route::get('/nomes/{name}/{surname}', function ($nombre=null, $apellido=null){
 //    ]);
 //});
 
-Route::get('/tarefas', function (){
+Route::get('/tarefas/home', function (){
     $tarefas = [
         'Compras senha',
         'Imprimir fotocópias',
@@ -75,11 +75,14 @@ Route::get('/tarefas', function (){
     return view('tarefas',[
         'tarefas' => $tarefas,
     ]);
-});
+})
+->name('tarefas.home');
 
 
 
-Route::get('/entrada', 'App\Http\Controllers\PortalController@index');
+Route::get('/entrada', 'App\Http\Controllers\PortalController@index')
+    ->name('entrada.index');
 
 
-Route::get('/listar-equipas/{chave?}', 'App\Http\Controllers\PortalController@listarEquipa');
+Route::get('/listar-equipas/{chave?}', 'App\Http\Controllers\PortalController@listarEquipa')
+    ->name('equipas.index');
