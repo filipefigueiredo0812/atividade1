@@ -86,3 +86,14 @@ Route::get('/entrada', 'App\Http\Controllers\PortalController@index')
 
 Route::get('/listar-equipas/{chave?}', 'App\Http\Controllers\PortalController@listarEquipa')
     ->name('equipas.index');
+
+
+
+
+
+Route::get('/mostrarcontacto', 'App\Http\Controllers\PortalController@mostrarContacto')->name('contacto.index');
+
+Route::post('/processar', 'App\Http\Controllers\PortalController@processarForm')->name('processar.form');
+
+Route::get('/mostrarform','App\Http\Controllers\PortalController@mostrarForm')->name('mostrar.form');
+

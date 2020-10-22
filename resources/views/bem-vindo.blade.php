@@ -23,4 +23,5 @@ Bem-Vindo
 <br>
 <img src="{{asset('imagens\imagem.jpg')}}">
 
+
 @endsection
